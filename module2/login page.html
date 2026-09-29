@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Login Page</title>
+
+```
+<style>
+    body {
+        font-family: Arial;
+        background-color: lightblue;
+    }
+
+    .login {
+        width: 300px;
+        margin: 100px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .loginButton {
+        background-color: green;
+        color: white;
+        border: none;
+    }
+
+    .clearButton {
+        background-color: red;
+        color: white;
+        border: none;
+    }
+
+    #message {
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="login">
+
+    <h1>Login</h1>
+
+    <input type="text" id="username"
+           placeholder="Enter Username">
+
+    <input type="password" id="password"
+           placeholder="Enter Password">
+
+    <br>
+
+    <button class="loginButton" onclick="login()">
+        Login
+    </button>
+
+    <button class="clearButton" onclick="clearForm()">
+        Clear
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+
+<script>
+
+    function login() {
+
+        var username =
+            document.getElementById("username").value;
+
+        var password =
+            document.getElementById("password").value;
+
+        if (username == "admin" && password == "1234") {
+
+            document.getElementById("message").innerHTML =
+                "Login Successful";
+
+            document.getElementById("message").style.color =
+                "green";
+
+        }
+        else {
+
+            document.getElementById("message").innerHTML =
+                "Invalid Username or Password";
+
+            document.getElementById("message").style.color =
+                "red";
+        }
+    }
+
+
+    function clearForm() {
+
+        document.getElementById("username").value = "";
+
+        document.getElementById("password").value = "";
+
+        document.getElementById("message").innerHTML = "";
+    }
+
+</script>
+```
+
+</body>
+</html>
