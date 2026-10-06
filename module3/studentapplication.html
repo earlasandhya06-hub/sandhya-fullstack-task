@@ -1,0 +1,214 @@
+<html>
+<head>
+    <title>Student Application Form</title>
+
+```
+<style>
+    body {
+        font-family: Arial;
+        background-color: lightblue;
+    }
+
+    .application {
+        width: 450px;
+        margin: 30px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        color: darkblue;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, select, textarea {
+        width: 95%;
+        padding: 9px;
+        margin-top: 5px;
+    }
+
+    textarea {
+        height: 70px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    .submit {
+        background-color: green;
+        color: white;
+        border: none;
+    }
+
+    .clear {
+        background-color: red;
+        color: white;
+        border: none;
+    }
+
+    #message {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="application">
+
+    <h1>Student Application</h1>
+
+    <label>Student Name</label>
+    <input type="text" id="name"
+           placeholder="Enter student name">
+
+    <label>Email</label>
+    <input type="email" id="email"
+           placeholder="Enter email">
+
+    <label>Phone Number</label>
+    <input type="text" id="phone"
+           placeholder="Enter phone number">
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob">
+
+    <label>Gender</label>
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <label>Course</label>
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>BCA</option>
+        <option>B.Sc Computer Science</option>
+        <option>B.Tech</option>
+        <option>MCA</option>
+    </select>
+
+    <label>Qualification</label>
+    <input type="text" id="qualification"
+           placeholder="Enter qualification">
+
+    <label>Address</label>
+    <textarea id="address"
+              placeholder="Enter address"></textarea>
+
+    <label>Application Number</label>
+    <input type="text" id="applicationNumber"
+           placeholder="Enter application number">
+
+    <br>
+
+    <button class="submit" onclick="submitApplication()">
+        Submit Application
+    </button>
+
+    <button class="clear" onclick="clearForm()">
+        Clear
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+
+<script>
+
+    function submitApplication() {
+
+        var name =
+            document.getElementById("name").value;
+
+        var email =
+            document.getElementById("email").value;
+
+        var phone =
+            document.getElementById("phone").value;
+
+        var dob =
+            document.getElementById("dob").value;
+
+        var gender =
+            document.getElementById("gender").value;
+
+        var course =
+            document.getElementById("course").value;
+
+        var qualification =
+            document.getElementById("qualification").value;
+
+        var address =
+            document.getElementById("address").value;
+
+        var applicationNumber =
+            document.getElementById("applicationNumber").value;
+
+
+        if (
+            name == "" ||
+            email == "" ||
+            phone == "" ||
+            dob == "" ||
+            gender == "" ||
+            course == "" ||
+            qualification == "" ||
+            address == "" ||
+            applicationNumber == ""
+        ) {
+
+            document.getElementById("message").innerHTML =
+                "Please fill all the fields";
+
+            document.getElementById("message").style.color =
+                "red";
+
+        }
+        else {
+
+            document.getElementById("message").innerHTML =
+                "Application Submitted Successfully";
+
+            document.getElementById("message").style.color =
+                "green";
+        }
+    }
+
+
+    function clearForm() {
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("dob").value = "";
+        document.getElementById("gender").value = "";
+        document.getElementById("course").value = "";
+        document.getElementById("qualification").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("applicationNumber").value = "";
+
+        document.getElementById("message").innerHTML = "";
+    }
+
+</script>
+```
+
+</body>
+</html>
